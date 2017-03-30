@@ -35,7 +35,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Names the annotated entity class -->
-        <mapping class="ru.apache_maven.UserDetails"/>
+        <mapping class="ru.apache_maven.Model.UserDetails"/>
 
     </session-factory>
 
