@@ -36,6 +36,9 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="ru.apache_maven.Model.UserDetails"/>
+        <mapping class="ru.apache_maven.Model.Vehicle"/>
+        <mapping class="ru.apache_maven.Model.TwoWheeler"/>
+        <mapping class="ru.apache_maven.Model.FourWheeler"/>
 
     </session-factory>
 
