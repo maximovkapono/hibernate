@@ -4,16 +4,15 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("Porsche")
 public class FourWheeler extends Vehicle {
 
-    private String SteeringWheel;
+    private String steeringWheel;
 
     public String getSteeringWheel() {
-        return SteeringWheel;
+        return steeringWheel;
     }
 
     public void setSteeringWheel(String steeringWheel) {
-        SteeringWheel = steeringWheel;
+        this.steeringWheel = steeringWheel;
     }
 }

@@ -1,12 +1,9 @@
 package ru.apache_maven.Model;
 
-import org.hibernate.annotations.DiscriminatorOptions;
-
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorValue("Vehicle")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Vehicle {
 
     @Id

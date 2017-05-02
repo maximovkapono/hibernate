@@ -9,23 +9,24 @@ public class App
 {
     public static void main( String[] args )
     {
-        Vehicle vehicle = new Vehicle();
-        vehicle.setVehicleName("Car");
-
-        TwoWheeler bike = new TwoWheeler();
-        bike.setVehicleName("Bike");
-        bike.setSteeringHandle("Steering Handle");
-
-        FourWheeler porsche = new FourWheeler();
-        porsche.setVehicleName("Porsche");
-        porsche.setSteeringWheel("Steering wheel");
-
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
-        session.save(vehicle);
-        session.save(bike);
-        session.save(porsche);
         session.beginTransaction();
+
+        UserDetails user = session.get(UserDetails.class, 5L);
+        user.setUserName("Updated us2er");
+
+        session.getTransaction().commit();
+        session.close();
+
+
+
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+
+        user.setUserName("New info");
+        session.update(user);
+
         session.getTransaction().commit();
         session.close();
     }

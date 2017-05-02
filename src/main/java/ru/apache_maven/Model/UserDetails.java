@@ -3,10 +3,8 @@ package ru.apache_maven.Model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "USER_DETAILS")
 public class UserDetails {
 
     @Id
