@@ -36,5 +36,10 @@
           <artifactId>postgresql</artifactId>
           <version>LATEST</version>
       </dependency>
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-ehcache</artifactId>
+          <version>LATEST</version>
+      </dependency>
   </dependencies>
 </project>

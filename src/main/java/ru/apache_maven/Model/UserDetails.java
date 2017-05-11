@@ -1,14 +1,19 @@
 package ru.apache_maven.Model;
 
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.NamedQuery;
+
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 @Entity
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+@NamedQuery(name = "UserDetails.byId", query = "from UserDetails where userId > :userId")
 public class UserDetails {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;
 
     private String userName;

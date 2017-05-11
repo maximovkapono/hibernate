@@ -25,8 +25,11 @@
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
 
-        <!-- Disable the second-level cache  -->
-        <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+        <!-- Second-level cache  -->
+        <property name="cache.use_second_level_cache">true</property>
+        <!--<property name="hibernate.cache.use_query_cache">true</property>-->
+        <!--<property name="net.sf.ehcache.configurationResourceName">/myehcache.xml</property>-->
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
